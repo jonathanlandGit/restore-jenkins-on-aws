@@ -45,11 +45,11 @@ data "aws_ami" "ubuntu" {
 
 # create instance and determine size of the server
 resource "aws_instance" "jenkins" {
-  ami                  = "ami-number"
+  ami                  = "ami-0b0ea68c435eb488d"
   instance_type        = "t2.medium"
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   security_groups      = [aws_security_group.jenkins.name]
-  key_name             = "jenkins-key-name"
+  key_name             = "jenkins-key"
   user_data            = file("user-data-jenkins.sh")
 
   connection {
